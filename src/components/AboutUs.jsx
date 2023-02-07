@@ -6,14 +6,14 @@ import CURVE from "../images/curve_2.png";
 const AboutUs = () => {
   return (
     <div className="radial2 w-full">
-      <div className="flex justify-between items-center px-[9.9375rem]">
-        <img src={LOGO} alt="LOGO" className="w-[120px] h-[169px]" />
-        <p className="text-[2.5rem] font-normal text-primary font-vcr underline">
+      <div className="flex justify-between items-center px-6 lg:px-[9.9375rem]">
+        <img src={LOGO} alt="LOGO" className="w-16 lg:w-[120px] lg:h-[169px]" />
+        <p className="text-2xl lg:text-[2.5rem] font-normal text-primary font-vcr underline">
           About Us
         </p>
       </div>
-      <div className="flex flex-col items-center px-[9.9375rem]">
-        <p className="font-spacegrotesk font-normal text-[2rem] leading-[3.25rem] text-white text-center mt-[6.125rem]">
+      <div className="flex flex-col items-center px-6 lg:px-[9.9375rem]">
+        <p className="font-spacegrotesk font-normal text-xl lg:text-[2rem] leading-[3.25rem] text-white text-center mt-[6.125rem]">
           Started as a one-man team,{" "}
           <span className="text-primary">KrakenStudios</span> have grown into a
           group of people with different skill sets and expertise, that is sure

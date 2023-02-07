@@ -1,6 +1,7 @@
 import React from "react";
 import AboutUs from "../components/AboutUs";
 import Hero from "../components/Hero";
+// import NFT from "../components/NFT";
 import Services from "../components/Services";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
       <Hero />
       <AboutUs />
       <Services />
+      {/* <NFT /> */}
     </>
   );
 };

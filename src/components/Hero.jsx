@@ -7,13 +7,13 @@ const Hero = () => {
   return (
     <div>
       <div className="radial1 w-full flex flex-col justify-center items-center">
-        <div className="flex items-center mt-[11.1875rem]">
-          <img src={LOGO} alt="LOGO" className="mr-6" />
-          <p className="text-7xl font-normal text-white font-vcr">
+        <div className="flex items-center mt-16 lg:mt-[11.1875rem]">
+          <img src={LOGO} alt="LOGO" className="mr-6 w-16 lg:w-full" />
+          <p className="text-2xl lg:text-7xl font-normal text-white font-vcr">
             <span className="text-primary">Kraken</span>Studios
           </p>
         </div>
-        <p className="mt-[3.75rem] font-spacegrotesk text-5xl text-white">
+        <p className="mt-[3.75rem] font-spacegrotesk text-2xl lg:text-5xl text-white text-center">
           Your Web3 Creative and Marketing Assistance
         </p>
         <button className="mt-[5.06rem]">
