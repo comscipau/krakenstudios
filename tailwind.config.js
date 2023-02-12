@@ -22,6 +22,7 @@ module.exports = {
       },
       boxShadow: {
         shadowMain: "0px -5px 1px #004694",
+        nftShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
       },
       dropShadow: {
         filterMain: "0px 8px 8px rgba(0, 70, 148, 0.5)",

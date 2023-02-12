@@ -2,8 +2,8 @@ import React from "react";
 import AboutUs from "../components/AboutUs";
 import Hero from "../components/Hero";
 import NFT from "../components/NFT";
-import NFT2 from "../components/NFT2";
 import Services from "../components/Services";
+import WebUI from "../components/WebUI";
 
 const Home = () => {
   return (
@@ -12,6 +12,7 @@ const Home = () => {
       <AboutUs />
       <Services />
       <NFT />
+      <WebUI />
     </>
   );
 };
