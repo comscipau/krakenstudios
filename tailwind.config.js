@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         primary: "#004694",
         secondary: "#6196D0",
+        sliderItem: "#ADD4FF",
       },
       fontFamily: {
         causten: ["Causten", "sans-serif"],

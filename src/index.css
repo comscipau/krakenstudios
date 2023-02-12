@@ -40,3 +40,32 @@
     #ffc88a 100%
   );
 }
+
+.radial4 {
+  background: radial-gradient(
+    154.98% 91.76% at 51.85% 26.5%,
+    #add4ff 0%,
+    #ffffff 100%
+  );
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-pagination {
+  margin-top: 100px;
+}
