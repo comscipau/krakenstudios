@@ -28,6 +28,13 @@ module.exports = {
         filterMain: "0px 8px 8px rgba(0, 70, 148, 0.5)",
       },
     },
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+    },
   },
   plugins: [],
 };

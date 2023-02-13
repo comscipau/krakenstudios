@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -22,11 +22,38 @@ import ARROW_LEFT from "../icons/arrow_left.svg";
 import ARROW_RIGHT from "../icons/arrow_right.svg";
 
 const WebUI = () => {
+  var mySpaceBetween;
+  var mySlidesPerView;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
+
+  if (windowWidth <= 640) {
+    // small
+    mySpaceBetween = 40;
+    mySlidesPerView = 2;
+  } else if (windowWidth <= 768) {
+    // medium
+    mySpaceBetween = 40;
+    mySlidesPerView = 2;
+  } else if (windowWidth >= 769) {
+    // large and above
+    mySpaceBetween = 200;
+    mySlidesPerView = 3;
+  }
+
   return (
-    <div className="w-full radial5 hidden lg:block">
+    <div className="w-full radial5">
       <div className="flex justify-between items-center px-6 lg:px-[9.9375rem] pt-20 mb-[3.38rem]">
         <img src={LOGO} alt="LOGO" className="w-16 lg:w-[120px] lg:h-[169px]" />
-        <p className="text-2xl lg:text-[2.5rem] font-normal text-primary font-vcr underline">
+        <p className="text-xl lg:text-[2.5rem] font-normal text-primary font-vcr underline">
           WEBSITE UI DESIGNS
         </p>
       </div>
@@ -35,10 +62,8 @@ const WebUI = () => {
         grabCursor={true}
         loop={true}
         centeredSlides={true}
-        // spaceBetween={100}
-        spaceBetween={200}
-        // slidesPerView={2}
-        slidesPerView={2}
+        spaceBetween={mySpaceBetween}
+        slidesPerView={mySlidesPerView}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -58,25 +83,25 @@ const WebUI = () => {
         className="swiper"
       >
         <SwiperSlide className="swiper-slide">
-          <div className="p-4 lg:p-10">
+          <div className="p-0 lg:p-10">
             <img src={slide_image_1} alt="slide_image_1" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="p-4 lg:p-10">
+          <div className="p-0 lg:p-10">
             <img src={slide_image_2} alt="slide_image_2" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="p-4 lg:p-10">
+          <div className="p-0 lg:p-10">
             <img src={slide_image_3} alt="slide_image_3" />
           </div>
         </SwiperSlide>
-        {/* <SwiperSlide className="swiper-slide">
+        <SwiperSlide className="swiper-slide">
           <div>
             <img src={slide_image_2} alt="slide_image_2" />
           </div>
-        </SwiperSlide> */}
+        </SwiperSlide>
         <div className="flex justify-center slider-controler mt-8 pb-[6px] gap-[8rem] relative z-20">
           <div className="cursor-pointer arrow-left2">
             <img src={ARROW_LEFT} alt="ARROW_LEFT" />

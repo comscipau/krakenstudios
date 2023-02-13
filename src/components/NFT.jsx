@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -25,11 +25,38 @@ import ARROW_LEFT from "../icons/arrow_left.svg";
 import ARROW_RIGHT from "../icons/arrow_right.svg";
 
 const NFT = () => {
+  var mySpaceBetween;
+  var mySlidesPerView;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
+
+  if (windowWidth <= 640) {
+    // small
+    mySpaceBetween = 100;
+    mySlidesPerView = 2;
+  } else if (windowWidth <= 768) {
+    // medium
+    mySpaceBetween = 100;
+    mySlidesPerView = 2;
+  } else if (windowWidth >= 769) {
+    // large and above
+    mySpaceBetween = 200;
+    mySlidesPerView = 3;
+  }
+
   return (
-    <div className="w-full radial4 hidden lg:block">
+    <div className="w-full radial4">
       <div className="flex justify-between items-center px-6 lg:px-[9.9375rem] pt-20 mb-[3.38rem]">
         <img src={LOGO} alt="LOGO" className="w-16 lg:w-[120px] lg:h-[169px]" />
-        <p className="text-2xl lg:text-[2.5rem] font-normal text-primary font-vcr underline">
+        <p className="text-base lg:text-[2.5rem] font-normal text-primary font-vcr underline">
           NON FUNGIBLE TOKENS (NFT)
         </p>
       </div>
@@ -38,10 +65,8 @@ const NFT = () => {
         grabCursor={true}
         loop={true}
         centeredSlides={true}
-        // spaceBetween={100}
-        spaceBetween={200}
-        // slidesPerView={2}
-        slidesPerView={3}
+        spaceBetween={mySpaceBetween}
+        slidesPerView={mySlidesPerView}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -61,52 +86,52 @@ const NFT = () => {
         className="swiper"
       >
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_1} alt="slide_image_1" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_2} alt="slide_image_2" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_3} alt="slide_image_3" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_4} alt="slide_image_4" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_5} alt="slide_image_5" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_6} alt="slide_image_6" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_7} alt="slide_image_7" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_5} alt="slide_image_5" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_6} alt="slide_image_6" />
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
+          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
             <img src={slide_image_7} alt="slide_image_7" />
           </div>
         </SwiperSlide>
