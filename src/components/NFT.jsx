@@ -103,7 +103,7 @@ const NFT = () => {
             </div>
           </SwiperSlide>
         ))}
-        <div className="flex justify-center slider-controler mt-8 pb-[6px] gap-[8rem] relative z-20">
+        <div className="flex justify-center slider-controler mt-8 pb-[6px] gap-[9rem] relative z-20">
           <div className="cursor-pointer arrow-left">
             <img src={ARROW_LEFT} alt="ARROW_LEFT" />
           </div>
