@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Modal from "./Modal";
+import { imgsNFT } from "../constants";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,13 +13,6 @@ import "swiper/css/pagination";
 // import required modules
 import { EffectCoverflow, Navigation, Pagination } from "swiper";
 
-import slide_image_1 from "../images/LOST_SOLS.png";
-import slide_image_2 from "../images/SHARK.png";
-import slide_image_3 from "../images/MYTHIC.png";
-import slide_image_4 from "../images/SLATS.png";
-import slide_image_5 from "../images/SUISIDESQUAD.png";
-import slide_image_6 from "../images/SHARK.png";
-import slide_image_7 from "../images/MYTHIC.png";
 import LOGO from "../images/KRAKEN.png";
 import CURVE from "../images/curve_4.png";
 
@@ -52,6 +47,12 @@ const NFT = () => {
     mySlidesPerView = 3;
   }
 
+  const [showModal, setShowModal] = useState(false);
+  const [showImg, setShowImg] = useState("");
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="w-full radial4">
       <div className="flex justify-between items-center px-6 lg:px-[9.9375rem] pt-20 mb-[3.38rem]">
@@ -85,56 +86,23 @@ const NFT = () => {
         modules={[EffectCoverflow, Navigation, Pagination]}
         className="swiper"
       >
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_1} alt="slide_image_1" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_2} alt="slide_image_2" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_3} alt="slide_image_3" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_4} alt="slide_image_4" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_5} alt="slide_image_5" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_6} alt="slide_image_6" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_7} alt="slide_image_7" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_5} alt="slide_image_5" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_6} alt="slide_image_6" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-5 flex items-center justify-center shadow-nftShadow">
-            <img src={slide_image_7} alt="slide_image_7" />
-          </div>
-        </SwiperSlide>
+        {imgsNFT.map((imgSrc, index) => (
+          <SwiperSlide className="swiper-slide" key={index}>
+            <div
+              className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-7 flex items-center justify-center shadow-nftShadow"
+              onClick={() => {
+                setShowImg(imgSrc.src);
+                setShowModal(true);
+              }}
+            >
+              <img
+                src={imgSrc.src}
+                alt={imgSrc.alt}
+                className="cursor-pointer"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
         <div className="flex justify-center slider-controler mt-8 pb-[6px] gap-[8rem] relative z-20">
           <div className="cursor-pointer arrow-left">
             <img src={ARROW_LEFT} alt="ARROW_LEFT" />
@@ -145,6 +113,7 @@ const NFT = () => {
         </div>
       </Swiper>
       <img src={CURVE} alt="CURVE" className="w-full mt-[3.38rem]" />
+      <Modal visible={showModal} onClose={closeModal} src={showImg} />
     </div>
   );
 };
