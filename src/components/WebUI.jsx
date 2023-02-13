@@ -23,7 +23,7 @@ import ARROW_RIGHT from "../icons/arrow_right.svg";
 
 const WebUI = () => {
   var mySpaceBetween;
-  var mySlidesPerView;
+  var mySlidesPerView = 2;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleWindowResize = () => {
@@ -38,15 +38,15 @@ const WebUI = () => {
   if (windowWidth <= 640) {
     // small
     mySpaceBetween = 40;
-    mySlidesPerView = 2;
+    // mySlidesPerView = 2;
   } else if (windowWidth <= 768) {
     // medium
     mySpaceBetween = 40;
-    mySlidesPerView = 2;
+    // mySlidesPerView = 2;
   } else if (windowWidth >= 769) {
     // large and above
     mySpaceBetween = 200;
-    mySlidesPerView = 3;
+    // mySlidesPerView = 2;
   }
 
   return (
