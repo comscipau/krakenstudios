@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import ReactDOMServer from "react-dom/server";
 import Modal from "./Modal";
 import { imgsNFT } from "../constants";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -89,6 +92,12 @@ const NFT = () => {
         {imgsNFT.map((imgSrc, index) => (
           <SwiperSlide className="swiper-slide" key={index}>
             <div
+              id="nft-tooltip"
+              data-tooltip-html={ReactDOMServer.renderToString(
+                <div>
+                  I am <b>JSX</b> content
+                </div>
+              )}
               className="bg-sliderItem border-[12px] border-white rounded-[40px] lg:rounded-[72px] p-4 lg:p-7 flex items-center justify-center shadow-nftShadow"
               onClick={() => {
                 setShowImg(imgSrc.src);
@@ -101,6 +110,12 @@ const NFT = () => {
                 className="cursor-pointer"
               />
             </div>
+            <ReactTooltip
+              anchorId="nft-tooltip"
+              // place="bottom"
+              // variant="info"
+              // content="Click to view image in full resolution."
+            />
           </SwiperSlide>
         ))}
         <div className="flex justify-center slider-controler mt-8 pb-[6px] gap-[9rem] relative z-20">

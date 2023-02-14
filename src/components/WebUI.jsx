@@ -49,6 +49,10 @@ const WebUI = () => {
     // mySlidesPerView = 2;
   }
 
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="w-full radial5">
       <div className="flex justify-between items-center px-6 lg:px-[9.9375rem] pt-20 mb-[3.38rem]">
@@ -84,22 +88,44 @@ const WebUI = () => {
       >
         <SwiperSlide className="swiper-slide">
           <div className="p-0 lg:p-10">
-            <img src={slide_image_1} alt="slide_image_1" />
+            <img
+              className="cursor-pointer"
+              src={slide_image_1}
+              alt="slide_image_1"
+              onClick={() =>
+                openInNewTab("https://cryptok-lodgings.vercel.app/")
+              }
+            ></img>
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
           <div className="p-0 lg:p-10">
-            <img src={slide_image_2} alt="slide_image_2" />
+            <img
+              className="cursor-pointer"
+              src={slide_image_2}
+              alt="slide_image_2"
+              onClick={() => openInNewTab("https://cmc-new.vercel.app/")}
+            ></img>
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
           <div className="p-0 lg:p-10">
-            <img src={slide_image_3} alt="slide_image_3" />
+            <img
+              className="cursor-pointer"
+              src={slide_image_3}
+              alt="slide_image_3"
+              onClick={() => openInNewTab("https://grypto.io/")}
+            ></img>
           </div>
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
           <div>
-            <img src={slide_image_2} alt="slide_image_2" />
+            <img
+              className="cursor-pointer"
+              src={slide_image_2}
+              alt="slide_image_2"
+              onClick={() => openInNewTab("https://cmc-new.vercel.app/")}
+            ></img>
           </div>
         </SwiperSlide>
         <div className="flex justify-center slider-controler mt-8 pb-[6px] gap-[8rem] relative z-20">
