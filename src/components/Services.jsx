@@ -6,26 +6,58 @@ import RECT_WEBUI from "../images/rect_webUI.png";
 import RECT_MARKETING from "../images/rect_marketing.png";
 import RECT_BRANDING from "../images/rect_branding.png";
 import RECT_COMMUNITY from "../images/rect_community.png";
+import { motion } from "framer-motion";
 
 const Services = () => {
+  const fadeInToUp = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.25,
+        ease: "easeInOut",
+        delay: 0.25,
+      },
+    },
+  };
+
   return (
-    <div className="w-full radial3">
-      <div className="flex justify-between items-center px-6 lg:px-[9.9375rem] pt-20">
+    <div className="relative w-full">
+      <motion.div
+        className="flex justify-between items-center px-6 lg:px-[9.9375rem] mt-20"
+        variants={fadeInToUp}
+        initial="hidden"
+        whileInView="visible"
+      >
         <img src={LOGO} alt="LOGO" className="w-16 lg:w-[120px] lg:h-[169px]" />
         <p className="text-2xl lg:text-[2.5rem] font-normal text-primary font-vcr underline">
           Services Offered
         </p>
-      </div>
-      <div className="flex flex-col items-center px-6 lg:px-[9.9375rem]">
+      </motion.div>
+      <motion.div
+        className="flex flex-col items-center px-6 lg:px-[9.9375rem]"
+        variants={fadeInToUp}
+        initial="hidden"
+        whileInView="visible"
+      >
         <p className="font-causten font-normal text-xl lg:text-2xl text-secondary text-center mt-[2.5625rem]">
           Services we offer are professionally made, and tailored to your
           specific requirements and needs. We ensure that the quality and
           satisfaction you will get are top notched, and delivered in a timely
           manner.
         </p>
-      </div>
-      <div className="flex flex-col lg:flex-row gap-6 px-6 lg:px-[9.9375rem] mt-10">
-        <div className="relative drop-shadow-filterMain rounded-[2.25rem]">
+      </motion.div>
+      <div className="flex flex-col lg:flex-row gap-6 px-6 lg:px-[9.9375rem] mt-10 pb-[3.6rem]">
+        <motion.div
+          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          variants={fadeInToUp}
+          initial="hidden"
+          whileInView="visible"
+        >
           <img
             src={RECT_NFT}
             alt="RECT_NFT"
@@ -34,8 +66,13 @@ const Services = () => {
           <div className="absolute bottom-0 flex items-center justify-center w-full h-32 bg-secondary rounded-2xl shadow-shadowMain">
             <span className="text-4xl text-white font-vcr">NFTs</span>
           </div>
-        </div>
-        <div className="relative drop-shadow-filterMain rounded-[2.25rem]">
+        </motion.div>
+        <motion.div
+          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          variants={fadeInToUp}
+          initial="hidden"
+          whileInView="visible"
+        >
           <img
             src={RECT_WEBUI}
             alt="RECT_WEBUI"
@@ -44,8 +81,13 @@ const Services = () => {
           <div className="absolute bottom-0 flex items-center justify-center w-full h-32 bg-secondary rounded-2xl shadow-shadowMain">
             <span className="text-4xl text-white font-vcr">Web UI</span>
           </div>
-        </div>
-        <div className="relative drop-shadow-filterMain rounded-[2.25rem]">
+        </motion.div>
+        <motion.div
+          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          variants={fadeInToUp}
+          initial="hidden"
+          whileInView="visible"
+        >
           <img
             src={RECT_MARKETING}
             alt="RECT_MARKETING"
@@ -56,8 +98,13 @@ const Services = () => {
               Digital Marketing
             </span>
           </div>
-        </div>
-        <div className="relative drop-shadow-filterMain rounded-[2.25rem]">
+        </motion.div>
+        <motion.div
+          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          variants={fadeInToUp}
+          initial="hidden"
+          whileInView="visible"
+        >
           <img
             src={RECT_BRANDING}
             alt="RECT_BRANDING"
@@ -66,8 +113,13 @@ const Services = () => {
           <div className="absolute bottom-0 flex items-center justify-center w-full h-32 bg-secondary rounded-2xl shadow-shadowMain">
             <span className="text-4xl text-white font-vcr">Branding</span>
           </div>
-        </div>
-        <div className="relative drop-shadow-filterMain rounded-[2.25rem]">
+        </motion.div>
+        <motion.div
+          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          variants={fadeInToUp}
+          initial="hidden"
+          whileInView="visible"
+        >
           <img
             src={RECT_COMMUNITY}
             alt="RECT_COMMUNITY"
@@ -78,9 +130,16 @@ const Services = () => {
               Community Building
             </span>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <img src={CURVE} alt="CURVE" className="w-full mt-[3.6rem]" />
+      <motion.img
+        src={CURVE}
+        alt="CURVE"
+        className="w-full"
+        variants={fadeInToUp}
+        initial="hidden"
+        whileInView="visible"
+      />
     </div>
   );
 };

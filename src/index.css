@@ -17,46 +17,6 @@
   src: url("./fonts/VCR_OSD_MONO.ttf");
 }
 
-.radial1 {
-  background: radial-gradient(
-    190.89% 113.03% at 51.85% 5.24%,
-    #ffc88a 0%,
-    #ff8800 100%
-  );
-}
-
-.radial2 {
-  background: radial-gradient(
-    433% 174.49% at 52.08% 15.76%,
-    #add4ff 0%,
-    #004694 81.1%
-  );
-}
-
-.radial3 {
-  background: radial-gradient(
-    190.89% 113.03% at 51.85% 5.24%,
-    #fff3e4 0%,
-    #ffc88a 100%
-  );
-}
-
-.radial4 {
-  background: radial-gradient(
-    154.98% 91.76% at 51.85% 26.5%,
-    #add4ff 0%,
-    #ffffff 100%
-  );
-}
-
-.radial5 {
-  background: radial-gradient(
-    154.98% 91.76% at 51.85% 26.5%,
-    #ffc88a 0%,
-    #ffedd8 100%
-  );
-}
-
 .swiper {
   width: 100%;
   padding-top: 50px;
