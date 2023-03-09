@@ -53,7 +53,7 @@ const Services = () => {
       </motion.div>
       <div className="flex flex-col lg:flex-row gap-6 px-6 lg:px-[9.9375rem] mt-10 pb-[3.6rem]">
         <motion.div
-          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          className="relative drop-shadow-filterMain rounded-[2.25rem] mx-6 lg:mx-0"
           variants={fadeInToUp}
           initial="hidden"
           whileInView="visible"
@@ -68,7 +68,7 @@ const Services = () => {
           </div>
         </motion.div>
         <motion.div
-          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          className="relative drop-shadow-filterMain rounded-[2.25rem] mx-6 lg:mx-0"
           variants={fadeInToUp}
           initial="hidden"
           whileInView="visible"
@@ -83,7 +83,7 @@ const Services = () => {
           </div>
         </motion.div>
         <motion.div
-          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          className="relative drop-shadow-filterMain rounded-[2.25rem] mx-6 lg:mx-0"
           variants={fadeInToUp}
           initial="hidden"
           whileInView="visible"
@@ -100,7 +100,7 @@ const Services = () => {
           </div>
         </motion.div>
         <motion.div
-          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          className="relative drop-shadow-filterMain rounded-[2.25rem] mx-6 lg:mx-0"
           variants={fadeInToUp}
           initial="hidden"
           whileInView="visible"
@@ -115,7 +115,7 @@ const Services = () => {
           </div>
         </motion.div>
         <motion.div
-          className="relative drop-shadow-filterMain rounded-[2.25rem]"
+          className="relative drop-shadow-filterMain rounded-[2.25rem] mx-6 lg:mx-0"
           variants={fadeInToUp}
           initial="hidden"
           whileInView="visible"
